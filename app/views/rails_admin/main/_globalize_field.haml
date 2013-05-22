@@ -38,8 +38,8 @@
     - elsif field.type == :rich_editor
       = render :partial => "rails_admin/main/form_rich_text", :locals => { form: form, field: field }
     - elsif field.type == :carrierwave
-      = render :partial => "file_upload", :locals => { form: form, field: field } if false
-      = link_to("EDIT", rails_admin.edit_path(object.class.to_s.gsub("::","~").underscore,object.id), :target=>"_blank")
+      = render :partial => "file_upload", :locals => { form: form, field: field }
+      = # link_to("EDIT", rails_admin.edit_path(object.class.to_s.gsub("::","~").underscore,object.id), :target=>"_blank")
     - else
       = form.send(field.view_helper, field.method_name, field.html_attributes)
     - if in_error
